@@ -10,21 +10,33 @@
  * @file - main.c
  */
 
+/**
+ * @brief - basic header files
+ */
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
 #include <math.h>
 
+/**
+ * @brief - nRF header files
+ */
 #include "boards.h"
 #include "app_util_platform.h"
 #include "app_error.h"
 #include "nrf_drv_twi.h"
 #include "nrf_delay.h"
 
+/**
+ * @brief - nRF log header files
+ */
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
 #include "nrf_log_default_backends.h"
 
+/**
+ * @brief - Sensor header files
+ */
 #include "STTS22H.h"
 
 /* TWI instance ID. */
@@ -79,7 +91,9 @@ typedef enum
 control_reg_config config;
 
 /**
- * @brief TWI events handler.
+ * @brief TWI events handler./**
+ * @brief - nRF log Initialization
+ */
  */
 void twi_handler(nrf_drv_twi_evt_t const * p_event, void * p_context)
 {
@@ -273,6 +287,9 @@ void log_init (void)
     NRF_LOG_DEFAULT_BACKENDS_INIT();
 }
 
+/**
+ * @brief - main function
+ */
 int main(void)
 {
     /* nRF log Initialization */
@@ -346,7 +363,9 @@ int main(void)
             f_ret_status = twi_slave_write_byte(STTS22H_TWI_ADDRESS, STTS22H_CTRL_ADDRESS, 0x34);
             NRF_LOG_INFO("ODR is set is 200 HZ");
             break;
-        default:
+        default:/**
+ * @brief - nRF log Initialization
+ */
             break;
     }
     
