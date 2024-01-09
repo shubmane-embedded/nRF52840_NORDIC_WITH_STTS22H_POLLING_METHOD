@@ -363,9 +363,7 @@ int main(void)
             f_ret_status = twi_slave_write_byte(STTS22H_TWI_ADDRESS, STTS22H_CTRL_ADDRESS, 0x34);
             NRF_LOG_INFO("ODR is set is 200 HZ");
             break;
-        default:/**
- * @brief - nRF log Initialization
- */
+        default:
             break;
     }
     
